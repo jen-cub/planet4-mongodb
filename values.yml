@@ -1,0 +1,34 @@
+
+usePassword: true
+# existingSecret: name-of-existing-secret
+
+## MongoDB admin password
+## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run
+##
+mongodbRootPassword: secretpassword
+
+## MongoDB custom user and database
+## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run
+##
+mongodbUsername: rcdb
+mongodbPassword: rcdb
+mongodbDatabase: rcdb
+
+service:
+  ## Specify an explicit service name.
+  name: p4-mongodb
+
+## Use StatefulSet instead of Deployment when deploying standalone
+useStatefulSet: true
+
+## Setting up replication
+## ref: https://github.com/bitnami/bitnami-docker-mongodb#setting-up-a-replication
+#
+replicaSet:
+  ## Whether to create a MongoDB replica set for high availability or not
+  enabled: true
+  useHostnames: true
+
+  ## Name of the replica set
+  ##
+  name: rs0

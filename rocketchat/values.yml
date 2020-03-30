@@ -1,0 +1,17 @@
+
+## MongoDB URL if using an externally provisioned MongoDB
+externalMongodbUrl:  mongodb://root:secretpassword@p4-mongodb.mongodb.svc.cluster.local:27017/local?replicaSet=rs0&authSource=admin
+externalMongodbOplogUrl:  mongodb://root:secretpassword@p4-mongodb.mongodb.svc.cluster.local:27017/local?replicaSet=rs0&authSource=admin
+#externalMongodbUrl: mongodb://p4-mongodb:27017/admin?authSource=admin&gssapiServiceName=mongodb
+#externalMongodbOplogUrl: mongodb://p4-mongodb:27017/admin?authSource=admin&gssapiServiceName=mongodb
+
+
+##
+## MongoDB chart configuration
+### ref https://github.com/helm/charts/tree/master/stable/mongodb#configuration
+##
+mongodb:
+  ## Enable or disable MongoDB dependency completely.
+  enabled: false
+
+mongodbRootPassword: secretpassword
